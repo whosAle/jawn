@@ -1,0 +1,16 @@
+<h1> <%= @activity.name %> </h1>
+
+<h3> <%= @activity.neighborhood.name %> </h3>
+
+<h3>Category: <%= @activity.category.capitalize %></h3>
+
+<h3>This is an <%= @activity.setting %> activity</h3>
+
+<h3>Best time to go: <%= @activity.tod %> </h3>
+
+<h2>Reviews</h2>
+<% @activity.reviews.each do |a| %>
+<p><%= a.description %><br>
+Rating: <%= a.rating %>/5 <br>
+- <%= a.user.name %></p>
+<% end %>

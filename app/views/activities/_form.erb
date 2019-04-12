@@ -1,0 +1,20 @@
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @activity do |f| %>
+<%= f.label :name %><br>
+<%= f.text_field :name %><br>
+<%= f.label :category %><br>
+<%= f.text_field :category %><br>
+<%= f.label :setting %><br>
+<%= f.text_field :setting %><br>
+<%= f.label :tod %><br>
+<%= f.text_field :tod %><br>
+<%= f.label :neighborhood_id %><br>
+<%= f.text_field :neighborhood_id %><br>
+<%= f.submit %>
+<% end %>
