@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_181424) do
+ActiveRecord::Schema.define(version: 2019_04_15_195727) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
     t.string "category"
     t.string "setting"
-    t.string "tod"
     t.integer "neighborhood_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "url_link"
   end
 
   create_table "neighborhoods", force: :cascade do |t|
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2019_04_12_181424) do
     t.integer "rating"
     t.integer "user_id"
     t.integer "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "time_of_days", force: :cascade do |t|
+    t.integer "activity_id"
+    t.boolean "morning"
+    t.boolean "afternoon"
+    t.boolean "evening"
+    t.boolean "late_night"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
