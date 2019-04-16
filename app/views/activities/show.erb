@@ -18,6 +18,10 @@
 <% @activity.reviews.each do |review| %>
 <p><%= review.description %><br>
 Rating: <%= review.rating %>/5 <br>
+<% if review.picture %>
+<img src= <%= review.picture.img_url %>><br>
+<%= review.picture.caption %><br>
+<% end %>
 - <%= review.user.name %></p>
 <%# TODO change hardcode to current_user == review.user %>
 <%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} if 2 == review.user.id %>

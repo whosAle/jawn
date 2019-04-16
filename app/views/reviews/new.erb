@@ -19,5 +19,14 @@
 
 <%= f.hidden_field :activity_id, :value => params[:format] %><br>
 
+<%= fields_for @picture do |f| %>
+<p>Add a Picture</p>
+<%= f.label :img_url %>
+<%= f.text_field :img_url %><br>
+<%= f.label :caption %>
+<%= f.text_field :caption %>
+<br>
+<% end %>
+
 <%= f.submit %>
 <% end %>

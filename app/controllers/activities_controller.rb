@@ -17,7 +17,6 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-
     @activity = Activity.create(activity_params)
     @time_of_day = TimeOfDay.create(params.require(:time_of_day).permit(:morning, :afternoon, :evening, :late_night))
     @time_of_day.update(activity_id: @activity.id)
