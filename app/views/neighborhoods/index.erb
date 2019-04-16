@@ -2,4 +2,5 @@
 
 <% @neighborhoods.each do |neighborhood| %>
   <%= link_to neighborhood.name, neighborhood_path(neighborhood) %> <br>
+  <img src=<%= neighborhood.hood_pic %>>
 <% end %>
