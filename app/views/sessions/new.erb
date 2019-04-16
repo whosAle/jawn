@@ -1,0 +1,26 @@
+<% provide(:title, "Log In") %>
+
+<div class="error">
+  <%  if flash[:danger]%>
+    <% # flash[:danger].each do |error| %>
+      <p> <%= flash[:danger]  %></p>
+    <% # end %>
+  <% end %>
+</div>
+
+<h1>Log In</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.label :user_name %>
+  <%= f.text_field :user_name %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Log In" %>
+
+<% end %>
+
+<p>New User? <%= link_to "Sign Up Here!" %></p>
+
+<p>Finished Up? <%= link_to "Log Out Here!", logout_path, method: :delete %></p>
