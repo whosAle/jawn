@@ -1,0 +1,15 @@
+<h1>Neighborhood Edit Form</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @neighborhood do |f| %>
+<%= f.label :name %><br>
+<%= f.text_area :name %><br>
+<%= f.label :description %><br>
+<%= f.text_area :description %><br>
+<%= f.submit %>
+<% end %>
