@@ -8,13 +8,31 @@
 <%= form_for @activity do |f| %>
 <%= f.label :name %><br>
 <%= f.text_field :name %><br>
+
 <%= f.label :category %><br>
-<%= f.text_field :category %><br>
+<%= f.collection_select :category, @CATEGORY, :to_s, :capitalize, prompt: true  %><br>
+
+<%= fields_for @time_of_day do |f|  %>
+  <p>Choose all that apply</p>
+<%= f.label :morning %>
+<%= f.check_box :morning %>
+
+<%= f.label :afternoon %>
+<%= f.check_box :afternoon %>
+
+<%= f.label :evening %>
+<%= f.check_box :evening %>
+
+<%= f.label :late_night %>
+<%= f.check_box :late_night %><br>
+<% end %>
+
 <%= f.label :setting %><br>
-<%= f.text_field :setting %><br>
-<%= f.label :tod %><br>
-<%= f.text_field :tod %><br>
-<%= f.label :neighborhood_id %><br>
-<%= f.text_field :neighborhood_id %><br>
+<%= f.collection_select :setting, @SETTING, :to_s, :capitalize, prompt: true  %><br>
+
+<%= f.hidden_field :neighborhood_id, :value => params[:format] %>
+
+<%= f.label :url_link %><br>
+<%= f.text_field :url_link %><br>
 <%= f.submit %>
 <% end %>

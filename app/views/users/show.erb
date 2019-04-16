@@ -1,1 +1,11 @@
 <h1><%= @user.name %></h1>
+
+<% @user.reviews.each do |review| %>
+<h3><%= link_to review.activity.name, activity_path(review.activity) %></h3>
+<p><%= button_to "Edit Review", edit_review_path(review), {method: :get} %></p>
+<p><%= review.rating %>/5 </p>
+<p><%= review.description %></p>
+
+<%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} %>
+
+<% end %>

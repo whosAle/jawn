@@ -10,10 +10,17 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @neighborhood = Neighborhood.find(params[:format].to_i)
+    @CATEGORY = ["restaurant", "retail", "monument", "museum", "park", "nightclub", "bar"]
+    @SETTING = ["indoor", "outdoor", "both"]
+    @time_of_day = TimeOfDay.new
   end
 
   def create
+    byebug
     @activity = Activity.create(activity_params)
+    @time_of_day = TimeOfDay.create(params.require(:time_of_day).permit(:morning, :afternoon, :evening, :late_night))
+    @time_of_day.update(activity_id: @activity.id)
     if @activity.valid?
       redirect_to @activity
     else
@@ -43,6 +50,10 @@ class ActivitiesController < ApplicationController
 
 
   def activity_params
-    params.require(:activity).permit(:name, :category, :setting, :tod, :neighborhood_id)
+    params.require(:activity).permit(:name, :category, :setting, :tod, :neighborhood_id, :url_link)
+  end
+
+  def slugify(name)
+    name.downcase.strip.gsub(' ', '+').gsub(/[^\w+]/, '')
   end
 end

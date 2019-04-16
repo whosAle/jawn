@@ -6,11 +6,21 @@
 
 <h3>This is an <%= @activity.setting %> activity</h3>
 
-<h3>Best time to go: <%= @activity.tod %> </h3>
+<h3>Best time to go: <%= @activity.tod.join(", ") %></h3>
+
+
+
+<% if @activity.url_link %>
+<p><%= link_to "visit their website", @activity.url_link %></p>
+<% end %>
 
 <h2>Reviews</h2>
-<% @activity.reviews.each do |a| %>
-<p><%= a.description %><br>
-Rating: <%= a.rating %>/5 <br>
-- <%= a.user.name %></p>
+<% @activity.reviews.each do |review| %>
+<p><%= review.description %><br>
+Rating: <%= review.rating %>/5 <br>
+- <%= review.user.name %></p>
+<%# TODO change hardcode to current_user == review.user %>
+<%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} if 2 == review.user.id %>
 <% end %>
+
+<p><%= button_to "Review This", new_review_path(@activity.id), method: :get %></p><br>
