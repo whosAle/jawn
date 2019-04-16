@@ -1,10 +1,8 @@
 <% provide(:title, "Log In") %>
 
 <div class="error">
-  <%  if flash[:danger]%>
-    <% # flash[:danger].each do |error| %>
-      <p> <%= flash[:danger]  %></p>
-    <% # end %>
+  <%if flash[:danger]%>
+    <p> <%= flash[:danger]  %></p>
   <% end %>
 </div>
 

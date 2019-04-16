@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     #TODO change back to user_name
     user = User.find_by(name: params[:session][:user_name])
    #TODO authenticate password in the if
-    if user # && user.authenticate(params[:session][:password]
+    if user  && user.authenticate(params[:session][:password]
       log_in user
       redirect_to user
     else
