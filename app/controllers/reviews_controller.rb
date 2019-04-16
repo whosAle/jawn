@@ -3,14 +3,20 @@ class ReviewsController < ApplicationController
   before_action :find_review, only: [:edit, :update]
 
   def new
+    session[:activity_id] ||= params[:format]
     @review = Review.new
     @users = User.all
-    @activity = Activity.find(params[:format].to_i)
+      @activity = Activity.find(session[:activity_id].to_i)
+      @picture = Picture.new
+
   end
 
   def create
     @review = Review.create(review_params(:description, :rating, :user_id, :activity_id))
+    @picture = Picture.create(params.require(:picture).permit(:img_url, :caption))
+    @picture.update(review_id: @review.id)
     if @review.valid?
+      session[:activity_id] = nil
       redirect_to activity_path(@review.activity)
     else
       flash[:errors] = @review.errors.full_messages
