@@ -33,9 +33,14 @@ class ActivitiesController < ApplicationController
   end
 
   def edit
+
+    @CATEGORY = ["restaurant", "retail", "monument", "museum", "park", "nightclub", "bar"]
+    @SETTING = ["indoor", "outdoor", "both"]
+    @time_of_day = TimeOfDay.new
   end
 
   def update
+    byebug
     @activity.update(activity_params)
     if @activity.valid?
       redirect_to @activity
