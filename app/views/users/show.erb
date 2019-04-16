@@ -5,4 +5,6 @@
 <p><%= review.rating %>/5 </p>
 <p><%= review.description %></p>
 
+<%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} %>
+
 <% end %>

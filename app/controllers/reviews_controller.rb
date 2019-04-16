@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_review, only: [:edit, :destroy]
+  before_action :find_review, only: [:edit]
 
   def new
     @review = Review.new
@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    
     @review = Review.create(review_params)
     if @review.valid?
       redirect_to activity_path(@review.activity)
@@ -27,7 +26,14 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-
+    byebug
+    @review = Review.find(params[:review_id])
+    @review.destroy
+    if params[:user_show]
+      redirect_to user_path(@review.user)
+    else
+      redirect_to activity_path(@review.activity)
+    end
   end
 
   private
