@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :reviews, except: [:index, :show]
   resources :activities
   resources :neighborhoods
+  resources :pictures, except: [:index, :show]
   root 'neighborhoods#index'
 end
