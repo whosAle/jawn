@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create]
 
   def new
   end
@@ -6,8 +7,8 @@ class SessionsController < ApplicationController
   def create
     #TODO change back to user_name
     user = User.find_by(name: params[:session][:user_name])
-   #authenticate password in the if 
-    if user
+   #TODO authenticate password in the if 
+    if user # && user.authenticate(params[:session][:password]
       log_in user
       redirect_to user
     else

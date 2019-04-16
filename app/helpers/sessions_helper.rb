@@ -23,4 +23,13 @@ module SessionsHelper
     @current_user = nil
   end
 
+  def authorized
+    redirect_to login_path unless logged_in?
+  end
+
+  def custom_auth_method
+    flash[:notice] = "not your accont YEET"
+    redirect_to current_user
+  end
+
 end
