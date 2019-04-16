@@ -1,6 +1,9 @@
 
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
+<% if flash[:a_errors] || flash[:tod_errors]%>
+  <% flash[:a_errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+  <% flash[:tod_errors].each do |error| %>
     <p><%= error %></p>
   <% end %>
 <% end %>
@@ -30,7 +33,7 @@
 <%= f.label :setting %><br>
 <%= f.collection_select :setting, @SETTING, :to_s, :capitalize, prompt: true  %><br>
 
-<%= f.hidden_field :neighborhood_id, :value => params[:format] %>
+<%= f.hidden_field :neighborhood_id, :value => session[:neighborhood_id] %>
 
 <%= f.label :url_link %><br>
 <%= f.text_field :url_link %><br>

@@ -17,8 +17,6 @@
 <%= f.label :user_id %><br>
 <%= f.collection_select :user_id, @users, :id, :name, prompt: true %>
 
-<%= f.hidden_field :activity_id, :value => params[:format] %><br>
-
 <%= fields_for @picture do |f| %>
 <p>Add a Picture</p>
 <%= f.label :img_url %>
@@ -27,6 +25,8 @@
 <%= f.text_field :caption %>
 <br>
 <% end %>
+
+<%= f.hidden_field :activity_id, :value => session[:activity_id] %><br>
 
 <%= f.submit %>
 <% end %>
