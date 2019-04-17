@@ -25,6 +25,7 @@ Activity.create(name: "Burger Heights", category: "restaurant", setting: "indoor
 Activity.create(name: "Manhattan Portage", category: "retail", setting: "indoor", neighborhood_id: 2, url_link: "https://www.manhattanportage.com/")
 Activity.create(name: "Manhattan Bridge", category: "monument", setting: "outdoor", neighborhood_id: 1, url_link: "http://home.nyc.gov/html/dot/html/infrastructure/manhattan-bridge.shtml")
 Activity.create(name: "The Loyal", category: "restaurant", setting: "indoor", neighborhood_id: 5, url_link: "http://www.loyalrestaurant.com/")
+
 #reviews
 Review.create(description: "It's good, Its like a five guys, but more like a neighborhood jawn", rating: 4, user_id: 2, activity_id: 2)
 Review.create(description: "A beautiful park next to the New York Library, also features a skating rink in the winter", rating: 5, user_id: 4, activity_id: 1)
