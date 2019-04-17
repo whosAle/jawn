@@ -5,13 +5,15 @@ class Neighborhood < ApplicationRecord
   # have a picture for each neighborhood from the neighborhood's reviews
 
   def hood_pic
-    f = nil
-    while !f
-      byebug
-      f = self.activities.sample.reviews.sample.picture
-      if f
-        f.img_url
+    foo = []
+    self.activities.each do |activity|
+      activity.reviews.each do |review|
+        if review.picture
+          foo << review.picture
+        end
       end
     end
+    foo.sample.img_url
   end
+
 end

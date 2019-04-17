@@ -23,7 +23,6 @@ module SessionsHelper
   end
 
   def authorized
-    byebug
     redirect_to login_path unless logged_in?
   end
 
