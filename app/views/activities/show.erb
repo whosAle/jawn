@@ -27,7 +27,7 @@ Rating: <%= review.rating %>/5 <br>
 <% end %>
 - <%= review.user.name %></p>
 
-<%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} if current_user == review.user %>
+<%= button_to "Delete Review", review_path, {method: :delete, params: {review_id: review.id}} if current_user == review.user %>
 <% end %>
 
 <p><%= button_to "Review This", new_review_path(@activity.id), method: :get %></p><br>
