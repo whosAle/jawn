@@ -8,6 +8,8 @@
 
 <h3>Best time to go: <%= @activity.tod.join(", ") %></h3>
 
+<h3>Average Ratings: <%= @activity.average_rating.round(2) %> / 5 (out of <%= @activity.reviews.length %> <%= @activity.reviews.length == 1 ? "review" : "reviews" %>)</h3>
+
 
 
 <% if @activity.url_link %>
