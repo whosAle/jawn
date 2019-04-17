@@ -48,3 +48,6 @@ Picture.create(img_url: "https://digitalmarketing.blob.core.windows.net/11400/im
 Picture.create(img_url: "http://cdn.brownstoner.com/wp-content/uploads/2016/02/manhattan-bridge-02.jpg", caption: "I think this is the right bridge", review_id: 3)
 Picture.create(img_url: "https://s3-media2.fl.yelpcdn.com/bphoto/p4hdeQnj6UaXzIXENIa5aw/348s.jpg", caption: "wall o bags", review_id: 4)
 Picture.create(img_url: "https://bryantpark-prod.imgix.net/images/bryantpark_uploads/images/2017-09-25-ColinMiller-Bryant-0002-6927.jpg", caption: "not whole foods", review_id: 6)
+
+#friendships
+Friendship.create(user_id: 3, followee_id: 4)

@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews, except: [:index, :show]
   resources :activities
-  resources :neighborhoods, include: [:index, :show]
+  resources :neighborhoods, only: [:index, :show]
   resources :pictures, except: [:index, :show]
+  resources :friendships, only: [:create, :destroy]
   root 'neighborhoods#index'
 
   get '/login', to: 'sessions#new', as: 'login'
