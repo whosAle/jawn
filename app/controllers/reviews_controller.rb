@@ -23,7 +23,6 @@ class ReviewsController < ApplicationController
       errors << @review.errors.full_messages
       errors << @picture.errors.full_messages
       flash[:errors] = errors.flatten
-      byebug
       redirect_to new_review_path
     end
   end
