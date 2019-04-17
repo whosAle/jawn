@@ -11,4 +11,33 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+
+
+  def num_of_reviews
+    self.reviews.length
+  end
+
+  def average_rating
+    average = self.reviews.inject(0.0) { |sum, r| sum += r.rating}/self.num_of_reviews
+    average.round(1)
+  end
+
+  def most_reviewed_hood
+    hood_array = self.reviews.map do |r|
+      r.activity.neighborhood
+    end
+    hood_hash = hood_array.inject(Hash.new(0)) { |h, v| h[v] += 1; h }
+    hood_array.max_by { |v| hood_hash[v]}
+  end
+
+  def all_followees_reviews
+    self.followees.map do |f|
+      f.reviews
+    end.flatten
+  end
+
+  def top_ten_followee_reviews
+    self.all_followees_reviews.max_by(10) { |f| f.updated_at}
+  end
+
 end
