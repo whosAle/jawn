@@ -23,23 +23,10 @@ class Activity < ApplicationRecord
     end.keys
   end
 
-  # def includes_http
-  #   if url_link.match(/http:/) == nil
-  #     url_link.prepend("http://", url_link)
-  #   end
-  # end
-  #
-  # def includes_http
-  #   if url_link.match(/http:/) == nil
-  #     url_link.concat(".com")
-  #   end
-  # end
-
-  # def correct_uri
-  #   byebug
-  #   if open(self.url_link).status != ["200", "OK"] || open(self.url_link).errors && self.url_link
-  #     errors.add(:url_link, "is not a valid url")
-  #   end
-  # end
+  def average_rating
+    self.reviews.inject(0.0) do |sum, review|
+      sum += review.rating
+    end / self.reviews.length
+  end
 
 end
