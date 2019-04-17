@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :reviews
+  has_many :reviews#, dependent: :destroy
   has_many :activities, through: :reviews
-  has_many :friendships, foreign_key: :user_id, class_name: "Friendship"
+  has_many :friendships, foreign_key: :user_id, class_name: "Friendship"#, dependent: :destroy
   has_many :followees, through: :friendships
 
   has_many :on_friendship_list, foreign_key: :followee_id, class_name: "Friendship"
@@ -27,7 +27,10 @@ class User < ApplicationRecord
       r.activity.neighborhood
     end
     hood_hash = hood_array.inject(Hash.new(0)) { |h, v| h[v] += 1; h }
-    hood_array.max_by { |v| hood_hash[v]}
+    the_hood = hood_array.max_by { |v| hood_hash[v]}
+    if the_hood
+      the_hood.name
+    end
   end
 
   def all_followees_reviews

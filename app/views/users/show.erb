@@ -1,5 +1,11 @@
 <h1><%= @user.name %></h1>
 
+<% if @user != current_user && !current_user.followees.include?(@user) %>
+  <%= button_to "follow", friendships_path, {params: {:followee_id => @user.id, :user_id => current_user.id}}  %>
+<% elsif current_user.followees.include?(@user) && @user != current_user %>
+  <%= button_to "following", friendship_path, {method: :delete, params: {followee_id: @user.id}} %>
+<% end %>
+
 <%# number of reviews %>
 <p>   Number of reviews:
 <%= @user.num_of_reviews %>
@@ -8,14 +14,10 @@
 <%= @user.average_rating %>
 <%# most reviews in a neighborhood %>
    Favorite Neighborhood:
-<%= @user.most_reviewed_hood.name %>
+<%= @user.most_reviewed_hood %>
 </p>
 
-<% if @user != current_user && !current_user.followees.include?(@user) %>
-  <%= button_to "follow", friendships_path, {params: {:followee_id => @user.id, :user_id => current_user.id}}  %>
-<% elsif current_user.followees.include?(@user) && @user != current_user %>
-  <%= button_to "following", friendship_path, {method: :delete, params: {followee_id: @user.id}} %>
-<% end %>
+<% if current_user.followees.include?(@user) || current_user == @user %>
 
 <% @user.reviews.each do |review| %>
 <h3><%= link_to review.activity.name, activity_path(review.activity) %></h3>
@@ -26,10 +28,9 @@
 
 <%= button_to "Edit Review", edit_review_path(review), {method: :get} if current_user == review.user %>
 <%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} if current_user == review.user %>
-
 <% end %>
 
-
+<% if current_user == @user  %>
 <h4>Yo Friends</h4>
 <% @user.followees.each do |f| %>
 <%= link_to f.name, user_path(f) %>
@@ -42,4 +43,10 @@
   Rating:
 <%= fr.rating %>/5
 <%= fr.description %></p>
+<% end %>
+
+<%# <% if current_user == @user  %>
+<%# button_to "delete user", user_path(@user), {method: :delete} %>
+<%# end %> %>
+<% end %>
 <% end %>
