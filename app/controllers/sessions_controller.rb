@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     #TODO change back to user_name
-    user = User.find_by(name: params[:session][:user_name])
+    user = User.find_by(name: params[:session][:username])
 
     if user && user.authenticate(params[:session][:password])
       log_in user
