@@ -12,7 +12,7 @@ class Activity < ApplicationRecord
 
 
   def formatted_correctly_url
-    if self.url_link.starts_with?("http://")
+    if !(!self.url_link.starts_with?("http://") || !self.url_link.starts_with?("https://"))
       errors.add(:url_link, "needs to start with http:// to be a valid link")
     end
   end

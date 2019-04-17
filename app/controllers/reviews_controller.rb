@@ -60,4 +60,8 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  # have a picture for each neighborhood from the neighborhood's reviews
+  Neighborhood.first.activities.first.reviews.first.picture.img_url
+
+
 end
