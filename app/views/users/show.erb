@@ -17,7 +17,7 @@
 <%= @user.most_reviewed_hood.name %>
 </p>
 
-<% if current_user.followees.include?(@user) %>
+<% if current_user.followees.include?(@user) || current_user == @user %>
 
 <% @user.reviews.each do |review| %>
 <h3><%= link_to review.activity.name, activity_path(review.activity) %></h3>
@@ -30,7 +30,7 @@
 <%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} if current_user == review.user %>
 <% end %>
 
-<% if current_user == @user %>
+<% if current_user == @user  %>
 <h4>Yo Friends</h4>
 <% @user.followees.each do |f| %>
 <%= link_to f.name, user_path(f) %>

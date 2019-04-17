@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authorized, only: [:new, :create]
-  before_action :find_user, only: [:show]
+  before_action :find_user, only: [:show, :destroy]
 
   def show
   end
@@ -18,6 +18,11 @@ class UsersController < ApplicationController
       flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path
     end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to login_path
   end
 
   private
