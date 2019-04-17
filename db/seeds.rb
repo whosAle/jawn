@@ -40,6 +40,7 @@ TimeOfDay.create(activity_id: 2, morning: false, afternoon: true, evening: true,
 TimeOfDay.create(activity_id: 1, morning: true, afternoon: true, evening: true, late_night: false)
 TimeOfDay.create(activity_id: 4, morning: true, afternoon: true, evening: true, late_night: false)
 TimeOfDay.create(activity_id: 3, morning: true, afternoon: true, evening: true, late_night: false)
+TimeOfDay.create(activity_id: 5, morning: true, afternoon: true, evening: true, late_night: true)
 
 #pictures
 Picture.create(img_url: "https://pmcwwd.files.wordpress.com/2017/10/the-loyal-restaurant-03.jpg?w=640&h=415&crop=1", caption: "A table", review_id: 5)
