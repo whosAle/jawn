@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to user
+      redirect_to neighborhoods_path
     else
       flash.now[:danger] = "Invalid user and password combination"
       render "new"
