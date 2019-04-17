@@ -25,7 +25,7 @@ Rating: <%= review.rating %>/5 <br>
 <img src= <%= review.picture.img_url %>><br>
 <%= review.picture.caption %><br>
 <% end %>
-- <%= review.user.name %></p>
+- <%= link_to review.user.name, user_path %></p>
 
 <%= button_to "Delete Review", review_path, {method: :delete, params: {review_id: review.id}} if current_user == review.user %>
 <% end %>
