@@ -29,4 +29,14 @@ class Activity < ApplicationRecord
     end / self.reviews.length
   end
 
+  def tod_output
+    self.tod.map do |td|
+      if td == "late_night"
+        "Late Night"
+      else
+        td.capitalize
+      end
+    end.join(", ")
+  end
+
 end

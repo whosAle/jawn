@@ -6,9 +6,10 @@
 
 <h3>This is an <%= @activity.setting %> activity</h3>
 
-<h3>Best time to go: <%= @activity.tod.join(", ") %></h3>
 
-<h3>Average Ratings: <%= @activity.reviews.length > 0 ? @activity.average_rating.round(2) : "-" %> / 5 (out of <%= @activity.reviews.length %> <%= @activity.reviews.length == 1 ? "review" : "reviews" %>)</h3>
+<h3>Best time to go: <%= @activity.tod_output %></h3>
+
+<h3>Average Ratings: <%= @activity.reviews.length > 0 ? @activity.average_rating.round(1) : "-" %> / 5 (out of <%= @activity.reviews.length %> <%= @activity.reviews.length == 1 ? "review" : "reviews" %>)</h3>
 
 
 

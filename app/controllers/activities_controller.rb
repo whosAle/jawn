@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    session[:activity_id] = nil
   end
 
   def new

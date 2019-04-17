@@ -14,8 +14,7 @@
 <%= f.label :rating %><br>
 <%= f.number_field :rating %><br>
 
-<%= f.label :user_id %><br>
-<%= f.collection_select :user_id, @users, :id, :name, prompt: true %>
+<%= f.hidden_field :user_id, :value => session[:user_id] %><br>
 
 <%= fields_for @picture do |f| %>
 <p>Add a Picture</p>
