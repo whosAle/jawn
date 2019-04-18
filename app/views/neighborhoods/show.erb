@@ -1,23 +1,40 @@
-<h1><%= @neighborhood.name %></h1>
+<div class="prime">
 
-  <img src=<%= @neighborhood.hood_pic %>>
-
-<p><%= @neighborhood.description %></p>
-
-<%= form_tag neighborhood_path(@neighborhood), method: :get do %>
+<div class="left">
+  <h1 class="hood-show-header"><%= @neighborhood.name %></h1>
+  <p><%= @neighborhood.description %></p>
+  <%= form_tag neighborhood_path(@neighborhood), method: :get do %>
   <%= label_tag :category %>
-  <%= collection_select :search, :category, @CATEGORY, :to_s, :capitalize, prompt: true  %>
+  <%= collection_select :search, :category, @CATEGORY, :to_s, :capitalize, prompt: true  %><br>
 
   <%= label_tag :setting %>
-  <%= collection_select :search, :setting, @SETTING, :to_s, :capitalize, prompt: true  %>
+  <%= collection_select :search, :setting, @SETTING, :to_s, :capitalize, prompt: true  %><br>
 
   <%= submit_tag "Filter" %>
-<% end %>
+  <% end %>
 
-<br>
+  <p><%= button_to "Add activity", new_activity_path(@neighborhood.id), method: :get %></p><br>
+</div>
 
-<% @activities.each do |activity| %>
-  <%= link_to activity.name, activity_path(activity) %><br>
-<% end %>
+<div class="right">
+  <% @activities.each do |activity| %>
+  <div class="card act-each">
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= link_to image_tag(activity.reviews.first.picture.img_url), activity_path(activity) %>
+    </h5>
+    <p class="card-text hood-act-pic" >
+      <%= link_to activity.name, activity_path(activity) %><br>
+      <%= activity.reviews.length %> <%= "Review".pluralize(activity.reviews.length) %><br>
+      <%= activity.category.capitalize %>
+    </p>
 
-<p><%= button_to "Add activity", new_activity_path(@neighborhood.id), method: :get %></p><br>
+  </div>
+</div>
+  <% end %>
+
+</div>
+
+</div>
+
+  <!-- <img src=<%= @neighborhood.hood_pic %>> -->
