@@ -13,6 +13,7 @@ class Neighborhood < ApplicationRecord
         end
       end
     end
+    byebug
     foo.sample.img_url
   end
 
