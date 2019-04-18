@@ -1,33 +1,61 @@
-<h1> <%= @activity.name %> </h1>
+<div class="prime_activity">
+  <%# image_tag "#{@activity.neighborhood.name}.jpg" %>
+  <div class="top">
+    <h1> <%= @activity.name %> </h1>
 
-<h3> <%= @activity.neighborhood.name %> </h3>
+    <h3> <%= @activity.neighborhood.name %> </h3>
 
-<h3>Category: <%= @activity.category.capitalize %></h3>
+    <p>Category: <%= @activity.category.capitalize %></p>
 
-<h3>This is an <%= @activity.setting %> activity</h3>
-
-
-<h3>Best time to go: <%= @activity.tod_output %></h3>
-
-<h3>Average Ratings: <%= @activity.reviews.length > 0 ? @activity.average_rating.round(1) : "-" %> / 5 (out of <%= @activity.reviews.length %> <%= @activity.reviews.length == 1 ? "review" : "reviews" %>)</h3>
+    <p>This is an <%= @activity.setting %> activity</p>
 
 
+    <p>Best time to go: <%= @activity.tod_output %></p>
 
-<% if @activity.url_link %>
-<p><%= link_to "visit their website", @activity.url_link %></p>
-<% end %>
+    <p>Average Ratings: <%= @activity.reviews.length > 0 ? @activity.average_rating.round(1) : "-" %> / 5 (out of <%= @activity.reviews.length %> <%= @activity.reviews.length == 1 ? "review" : "reviews" %>)</p>
 
-<h2>Reviews</h2>
-<% @activity.reviews.each do |review| %>
-<p><%= review.description %><br>
-Rating: <%= review.rating %>/5 <br>
-<% if review.picture %>
-<img src= <%= review.picture.img_url %>><br>
-<%= review.picture.caption %><br>
-<% end %>
-- <%= link_to review.user.name, user_path(review.user) %></p>
 
-<%= button_to "Delete Review", review_path, {method: :delete, params: {review_id: review.id}} if current_user == review.user %>
-<% end %>
 
-<p><%= button_to "Review This", new_review_path(@activity.id), method: :get %></p><br>
+    <% if @activity.url_link %>
+    <p><%= link_to "visit their website", @activity.url_link %></p>
+    <% end %>
+
+    <p><%= button_to "Review This", new_review_path(@activity.id), method: :get %></p>
+    <h2>Reviews</h2>
+  </div>
+
+<div class="reviews">
+
+
+  <% @activity.reviews.each do |review| %>
+  <!-- <div class="card-header">
+    Featured
+  </div> -->
+  <div class="card act-revs">
+    <div class="act-info">
+      <div class="card-title review-pic">
+        <img src= <%= review.picture.img_url %>>
+      </div>
+      <div class="info-container">
+        <p class="card-text act-text">
+          <%= review.description %><br>
+          Rating: <%= review.rating %>/5 <br>
+          <% if review.picture %>
+          <%= review.picture.caption %><br>
+          <% end %>
+          - <%= link_to review.user.name, user_path(review.user) %>
+        </p>
+        <p class="float-right d-tag">
+          <%= button_to "Delete Review", review_path, {method: :delete, params: {review_id: review.id}} if current_user == review.user %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <br>
+
+
+
+</div>
+
+</div>
