@@ -10,6 +10,10 @@ class Activity < ApplicationRecord
   validate :formatted_correctly_url
   # validate :correct_uri
 
+  scope :category, ->(category) {where category: category}
+  scope :setting, ->(setting) { where setting: setting }
+
+
 
   def formatted_correctly_url
     if !(!self.url_link.starts_with?("http://") || !self.url_link.starts_with?("https://"))
@@ -37,6 +41,14 @@ class Activity < ApplicationRecord
         td.capitalize
       end
     end.join(", ")
+  end
+
+  def self.filter_by_neighborhood(neighborhood_id, filter_queries)
+    response = self.where("neighborhood_id = ?", neighborhood_id)
+    filter_queries.each do |key, value|
+      response = response.public_send(key, value) if value.present?
+    end
+    response
   end
 
 end

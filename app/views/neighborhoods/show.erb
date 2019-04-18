@@ -4,7 +4,19 @@
 
 <p><%= @neighborhood.description %></p>
 
-<% @neighborhood.activities.each do |activity| %>
+<%= form_tag neighborhood_path(@neighborhood), method: :get do %>
+  <%= label_tag :category %>
+  <%= collection_select :search, :category, @CATEGORY, :to_s, :capitalize, prompt: true  %>
+
+  <%= label_tag :setting %>
+  <%= collection_select :search, :setting, @SETTING, :to_s, :capitalize, prompt: true  %>
+
+  <%= submit_tag "Filter" %>
+<% end %>
+
+<br>
+
+<% @activities.each do |activity| %>
   <%= link_to activity.name, activity_path(activity) %><br>
 <% end %>
 
