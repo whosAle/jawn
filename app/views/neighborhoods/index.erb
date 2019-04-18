@@ -1,6 +1,23 @@
-<h1>Neighborhoods</h1>
+<div class="neighborhoods-container">
 
-<% @neighborhoods.each do |neighborhood| %>
-  <%= link_to neighborhood.name, neighborhood_path(neighborhood) %> <br>
-  <img src=<%= neighborhood.hood_pic %>><br>
-<% end %>
+  <div class="hood-header">
+    <h1>Neighborhoods</h1>
+  </div>
+
+  <div class="neighborhood-body-container">
+    <% @neighborhoods.each do |neighborhood| %>
+
+    <div class="card" style="width: 23rem;">
+      <img class="card-img-top" src="<%= neighborhood.hood_pic %>" alt="<%=neighborhood.name%>">
+      <div class="">
+        <div class="card-text"><h3><%= link_to neighborhood.name, neighborhood_path(neighborhood) %></h3></div>
+      </div>
+    </div>
+
+
+    <%# <img class="hood-pic" src=<%= neighborhood.hood_pic %>
+
+    <% end %>
+  </div>
+
+</div>
