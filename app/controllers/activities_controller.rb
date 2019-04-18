@@ -2,8 +2,7 @@ class ActivitiesController < ApplicationController
   before_action :find_activity, only: [:show, :edit, :update]
 
   def index
-    # @all_activities = Activity.all
-    @all_activities = Activity.filter_queries(params.slice(:setting, :category))
+    @all_activities = Activity.all
   end
 
   def show
