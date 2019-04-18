@@ -12,10 +12,17 @@
 
   <body>
     <div id="navbar">
-      <%= link_to "jawn", neighborhoods_path %>
-      <% if current_user %>
-      <%= link_to current_user.name, user_path(current_user) %>
-      <%= link_to "Log Out", logout_path, method: :delete %>
+      <button type="button" class="btn btn-outline-primary">
+        <%= link_to "Hood", neighborhoods_path %>
+      </button>
+
+      <button type="button" class="btn btn-outline-info">
+        <% if current_user %>
+        <%= link_to current_user.name, user_path(current_user) %>
+      </button>
+      <button type="button" class="btn btn-outline-danger">
+        <%= link_to "Log Out", logout_path, method: :delete %>
+      </button>
       <% end %>
     </div>
     <%= yield %>

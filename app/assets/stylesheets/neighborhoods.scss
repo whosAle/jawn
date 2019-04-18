@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
+.hood-header h1 {
   font-size: 80px;
 }
 
@@ -13,7 +13,6 @@ h1 {
 .hood-header {
   font-family: 'Heebo', sans-serif;
   text-align: center;
-
 }
 
 .neighborhood-body-container {
@@ -22,41 +21,36 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
 }
 
 .card {
-
   margin: 1em 0;
 }
 
-.card-text {
-
+.hood-index {
   position: absolute;
   justify-content: center;
   top: 44%;
   right: 0%;
   text-align: center;
   width: 100%;
-
 }
 
-.card-text a {
+.hood-index a {
   color: #fff;
   padding: .5em 1em;
   background-color: #000
-
 }
-.card-text a:hover {
+
+.hood-index a:hover {
   font-weight: 700;
   color: #000;
   background-color: transparent;
   text-decoration: none;
-
 }
-.card-text a:visited {
-  text-decoration: none;
 
+.hood-index a:visited {
+  text-decoration: none;
 }
 
 .card-img-top {
@@ -74,5 +68,55 @@ h1 {
 }
 
 .card-body {
+  display: flex;
+  flex-direction: row;
   padding-bottom: 0px;
+}
+
+.prime {
+  display: flex;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.left {
+  width: 30%;
+  padding: .5em;
+}
+
+.left h1 {
+  position: center;
+}
+
+.right {
+  flex-grow: 1;
+}
+
+// .activity {
+//   border: dashed blue;
+//   margin: 10px;
+//   text-align: center;
+//   font-size: 20px;
+//   height: 80px;
+//
+// }
+
+.card-title img {
+  object-fit: cover;
+  width: 8em;
+  height: 8em;
+}
+
+.hood-act-pic a {
+  position: absolute;
+  justify-content: center;
+}
+
+
+.card-text:last-child {
+  margin: 10px;
+}
+
+.act-each {
+  height: 200px;
 }
