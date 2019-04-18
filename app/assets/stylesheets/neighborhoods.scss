@@ -1,3 +1,78 @@
 // Place all the styles related to the Neighborhoods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  font-size: 80px;
+}
+
+.neighborhoods-container {
+  background-color: #ace1af;
+}
+
+.hood-header {
+  font-family: 'Heebo', sans-serif;
+  text-align: center;
+
+}
+
+.neighborhood-body-container {
+
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.card {
+
+  margin: 1em 0;
+}
+
+.card-text {
+
+  position: absolute;
+  justify-content: center;
+  top: 44%;
+  right: 0%;
+  text-align: center;
+  width: 100%;
+
+}
+
+.card-text a {
+  color: #fff;
+  padding: .5em 1em;
+  background-color: #000
+
+}
+.card-text a:hover {
+  font-weight: 700;
+  color: #000;
+  background-color: transparent;
+  text-decoration: none;
+
+}
+.card-text a:visited {
+  text-decoration: none;
+
+}
+
+.card-img-top {
+  width: auto;
+  height: 15em;
+  object-fit: cover;
+}
+
+.hood-pic {
+  margin: 1em;
+  height: 50vh;
+  width: auto;
+  border: solid;
+  border-color: blue;
+}
+
+.card-body {
+  padding-bottom: 0px;
+}
