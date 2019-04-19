@@ -40,14 +40,17 @@
         <p class="card-text act-text">
           <%= review.description %><br>
           Rating: <%= review.rating %>/5 <br>
-          <% if review.picture %>
-          <%= review.picture.caption %><br>
-          <% end %>
           - <%= link_to review.user.name, user_path(review.user) %>
         </p>
         <p class="float-right d-tag">
           <%= button_to "Delete Review", review_path, {method: :delete, params: {review_id: review.id}} if current_user == review.user %>
         </p>
+        <small class="">
+          <% if review.picture %>
+          Caption: 
+          <%= review.picture.caption %><br>
+          <% end %>
+        </small>
       </div>
     </div>
   </div>

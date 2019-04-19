@@ -50,7 +50,7 @@
 <h4>Yo Friends</h4>
 <p class="face">
   <% @user.followees.each do |f| %>
-  <%= link_to f.name, user_path(f) %>
+  <%= link_to f.name, user_path(f) %><br>
   <% end %>
 </p>
 
