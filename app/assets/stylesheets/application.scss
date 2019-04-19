@@ -56,9 +56,11 @@ body {
   margin: 0 auto;
 }
 
-textarea,
-input[type=text] {
-  width: 40%;
+.new_activity {
+  textarea,
+  input[type=text] {
+    width: 40%;
+  }
 }
 
 input[type=number] {
@@ -97,4 +99,23 @@ select {
     padding-right: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
+}
+
+.background-log-in {
+  background-image: url("/assets/log-in-pic.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-log-in {
+  background-color: rgba(0, 0, 0, 0.45);
+  height: 60%;
+  width: 25%;
+  padding: 20px 5px;
 }
