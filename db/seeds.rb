@@ -11,6 +11,7 @@ User.create(name: "PA Rivers", password: "paul")
 User.create(name: "Paris", password: "french")
 User.create(name: "Romeo", password: "italia")
 User.create(name: "Juliet", password: "cap")
+User.create(name: "Andro 3000", password: "ale")
 
 #neighborhoods
 Neighborhood.create(name: "DUMBO", description: "Down Under Manhattan Bridge Overpass")
@@ -20,6 +21,7 @@ Neighborhood.create(name: "Times Square", description: "We're pretty sure you kn
 Neighborhood.create(name: "West Village", description: "Better than East Village")
 Neighborhood.create(name: "FiDi", description: "Has a street with a wall on it")
 Neighborhood.create(name: "TriBeCa", description: "Triangle Below Canal street")
+midtown = Neighborhood.create(name: "Midtown", description: "Tall Buildings")
 
 
 
@@ -48,6 +50,8 @@ Activity.create(name: "Pier 25", category: "park", setting: "outdoor", neighborh
 palace = Activity.create(name: "United Palace", category: "monument", setting: "indoor", neighborhood_id: 3, url_link: "https://www.unitedpalace.org/")
 high_park = Activity.create(name: "Highbridge Park", category: "park", setting: "outdoor", neighborhood_id: 3, url_link: "https://www.nycgovparks.org/parks/highbridge-park")
 tussauds = Activity.create(name: "Madame Tussauds", category: "museum", setting: "indoor", neighborhood_id: 4, url_link: "https://www.madametussauds.com/new-york/en/")
+moma = Activity.create(name: "Museum of Modern Art", category: "museum", setting: "both", neighborhood_id: midtown.id, url_link: "https://www.moma.org/")
+rock = Activity.create(name: "Rockafeller Center", category: "monument", setting: "both", neighborhood_id: midtown.id, url_link: "https://www.rockefellercenter.com/")
 
 #reviews
 Review.create(description: "It's good, Its like a five guys, but more like a neighborhood jawn", rating: 4, user_id: 2, activity_id: 2)
@@ -80,6 +84,9 @@ Review.create(description: "its a pier that is also a park so yeah", rating: 2, 
 palace1 = Review.create(description: "Beautiful interior, art deco I think…", rating: 5, user_id: 2, activity_id: palace.id)
 high_park1 = Review.create(description: "Closed too early, and a lot of trash. Otherwise, cool, and very green", rating: 2, user_id: 4, activity_id: high_park.id)
 tussauds1 = Review.create(description: "Eerie how good the wax is! I’ll bring my grandchildren next time!", rating: 4, user_id: 1, activity_id: tussauds.id)
+portage2 = Review.create(description: "*shrugs, smiles, eyes bulge*", rating: 3, user_id: 5, activity_id: 3)
+rock1 = Review.create(description: "omg so chill v beaut big fann", rating: 4, user_id: 4, activity_id: rock.id)
+moma1 = Review.create(description: "moma? um... it really ain't tho, it has a lot of pieces no I like moma I used to go once a month, back in high school", rating: 3, user_id: 5, activity_id: moma.id)
 
 
 #time of day
@@ -107,6 +114,8 @@ TimeOfDay.create(activity_id: 21, morning: true, afternoon: true, evening: true,
 TimeOfDay.create(activity_id: palace.id, morning: false, afternoon: true, evening: true, late_night: true)
 TimeOfDay.create(activity_id: high_park.id, morning: true, afternoon: true, evening: false, late_night: false)
 TimeOfDay.create(activity_id: tussauds.id, morning: true, afternoon: true, evening: false, late_night: false)
+TimeOfDay.create(activity_id: moma.id, morning: true, afternoon: true, evening: true, late_night: false)
+TimeOfDay.create(activity_id: rock.id, morning: true, afternoon: true, evening: true, late_night: true)
 
 #pictures
 Picture.create(img_url: "https://pmcwwd.files.wordpress.com/2017/10/the-loyal-restaurant-03.jpg", caption: "A table", review_id: 5)
@@ -139,7 +148,13 @@ Picture.create(img_url: "http://thebabybumpdiaries.com/wp-content/uploads/2014/0
 Picture.create(img_url: "https://imgs.6sqft.com/wp-content/uploads/2018/04/27165037/United-Palace-Theatre-31.jpg", caption: "Picture from the stage, super lucky!", review_id: palace1.id)
 Picture.create(img_url: "https://www.nycgovparks.org/photo_gallery/full_size/23019.jpg", caption: "Fall view of the bridge", review_id: high_park1.id)
 Picture.create(img_url: "https://www.madametussauds.com/media/2192868/500-x-333.jpg", caption: "So close to royalty laugh out loud", review_id: tussauds1.id)
+Picture.create(img_url: "http://www.joeyblsphotography.com/wp-content/uploads/2012/06/NYC-Shopping_700.jpg", caption: "*blinks artsey*", review_id: portage2.id)
+Picture.create(img_url: "https://untappedcities-wpengine.netdna-ssl.com/wp-content/uploads/2014/05/620-Loft-Garden-Rockefeller-Center-Garden-Rooftop-Terrace-Cathedral-of-St.-John-the-Divine-Saks-Fifth-Avenue-NYC_1.jpg", caption: "secret gardens", review_id: rock1.id)
+Picture.create(img_url: "https://media.vanityfair.com/photos/54cc058ffde9250a6c4161d7/master/w_768,c_limit/image.jpg", caption: "street view", review_id: moma1.id)
 
 #friendships
 Friendship.create(user_id: 3, followee_id: 4)
 Friendship.create(user_id: 4, followee_id: 3)
+Friendship.create(user_id: 4, followee_id: 1)
+Friendship.create(user_id: 4, followee_id: 2)
+Friendship.create(user_id: 4, followee_id: 5)
