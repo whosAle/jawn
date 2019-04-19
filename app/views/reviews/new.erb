@@ -19,17 +19,17 @@
 <%= f.hidden_field :user_id, :value => session[:user_id] %><br>
 
 <%= fields_for @picture do |f| %>
-<p>Add a Picture</p>
-<%= f.label :img_url %>
+<p>Add a Picture (optional)</p>
+<%= f.label :img_url %><br>
 <%= f.text_field :img_url %><br>
-<%= f.label :caption %>
+<%= f.label :caption %><br>
 <%= f.text_field :caption %>
 <br>
 <% end %>
 
 <%= f.hidden_field :activity_id, :value => session[:activity_id] %><br>
 
-<%= f.submit %>
+<%= f.submit :class=> "btn btn-secondary" %>
 <% end %>
 
 </div>

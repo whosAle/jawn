@@ -24,9 +24,9 @@
   background-color: #ace1af;
 }
 
-// body {
-//   background-color: #BFD1E5;
-// }
+body {
+  background-color: #fffffb;
+}
 
 .btn {
   font-size: 25px;
@@ -54,4 +54,47 @@
 .form-container {
   width: 80%;
   margin: 0 auto;
+}
+
+textarea,
+input[type=text] {
+  width: 40%;
+}
+
+input[type=number] {
+  width: 20%;
+}
+
+textarea,
+input[type=text],
+input[type=password],
+input[type=number] {
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+select {
+    width: 40%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
