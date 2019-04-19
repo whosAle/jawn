@@ -17,10 +17,16 @@
 @import "neighborhoods";
 @import "activities";
 @import "users";
+@import "sessions";
+@import "reviews";
 
 #navbar {
   background-color: #ace1af;
 }
+
+// body {
+//   background-color: #BFD1E5;
+// }
 
 .btn {
   font-size: 25px;
@@ -43,4 +49,9 @@
 .btn-outline-danger {
   position: absolute;
   right: 0px;
+}
+
+.form-container {
+  width: 80%;
+  margin: 0 auto;
 }

@@ -1,0 +1,36 @@
+// Place all the styles related to the User controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.prime-user {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.two-fifths {
+  position: right;
+  width: 70%;
+  justify-content: flex-start;
+}
+
+.one-fifth {
+  width: 30%;
+  padding-left: 12px;
+}
+
+#review-opts {
+  display: flex;
+  font-size: .5em;
+  justify-content: flex-start;
+}
+
+.user-r-info {
+  width: 100%;
+}
+
+.face {
+  padding-down: 7px;
+}

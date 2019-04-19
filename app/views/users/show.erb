@@ -1,3 +1,7 @@
+<div class="prime-user">
+
+<div class="two-fifths">
+
 <h1><%= @user.name %></h1>
 
 <% if @user != current_user && !current_user.followees.include?(@user) %>
@@ -8,10 +12,10 @@
 
 <%# number of reviews %>
 <p>   Number of reviews:
-<%= @user.num_of_reviews %>
+<%= @user.num_of_reviews %><br>
 <%# average rating for reviews %>
    Average rating for reviews:
-<%= @user.average_rating %>
+<%= @user.average_rating %>/5<br>
 <%# most reviews in a neighborhood %>
    Favorite Neighborhood:
 <%= @user.most_reviewed_hood %>
@@ -20,33 +24,51 @@
 <% if current_user.followees.include?(@user) || current_user == @user %>
 
 <% @user.reviews.each do |review| %>
-<h3><%= link_to review.activity.name, activity_path(review.activity) %></h3>
+<div class="card">
+  <div class="card-header">
+    <%= link_to review.activity.name, activity_path(review.activity) %>
+  </div>
+  <div class="card-body full-width">
+    <p class="card-text user-r-info">
+      <small>Rating: <%= review.rating %>/5</small><br>
+      <%= review.description %>
+    </p>
+    <span id="review-opts">
+      <%= button_to "Edit Review", edit_review_path(review), {method: :get} if current_user == review.user %>
+      <%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} if current_user == review.user %>
+    </span>
+  </div>
+</div>
+  <% end %>
 
-<p><%= review.rating %>/5 </p>
-<p><%= review.description %></p>
 
+</div>
 
-<%= button_to "Edit Review", edit_review_path(review), {method: :get} if current_user == review.user %>
-<%= button_to "Delete Review", review_path, {method: :delete, params: {user_show: true, review_id: review.id}} if current_user == review.user %>
-<% end %>
+<div class="one-fifth">
 
 <% if current_user == @user  %>
 <h4>Yo Friends</h4>
-<% @user.followees.each do |f| %>
-<%= link_to f.name, user_path(f) %>
-<% end %>
+<p class="face">
+  <% @user.followees.each do |f| %>
+  <%= link_to f.name, user_path(f) %>
+  <% end %>
+</p>
 
 <h4>Recent Friend Reviews</h4>
 <% @user.top_ten_followee_reviews.each do |fr| %>
-<p><%= link_to fr.user.name, user_path(fr.user) %>
+<p><%= link_to fr.user.name, user_path(fr.user) %><br>
   <%= link_to fr.activity.name, activity_path(fr.activity) %>
   Rating:
 <%= fr.rating %>/5
 <%= fr.description %></p>
 <% end %>
 
+</div>
+
 <%# <% if current_user == @user  %>
 <%# button_to "delete user", user_path(@user), {method: :delete} %>
 <%# end %>
 <% end %>
 <% end %>
+
+</div>
