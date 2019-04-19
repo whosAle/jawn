@@ -45,7 +45,9 @@ Activity.create(name: "One Times Square", category: "monument", setting: "outdoo
 Activity.create(name: "Village Vanguard", category: "monument", setting: "indoor", neighborhood_id: 5, url_link: "https://villagevanguard.com/")
 Activity.create(name: "Dead Rabbit", category: "bar", setting: "indoor", neighborhood_id: 6, url_link: "https://www.deadrabbitnyc.com/")
 Activity.create(name: "Pier 25", category: "park", setting: "outdoor", neighborhood_id: 7, url_link: "https://hudsonriverpark.org/explore-the-park/locations/pier-25")
-
+palace = Activity.create(name: "United Palace", category: "monument", setting: "indoor", neighborhood_id: 3, url_link: "https://www.unitedpalace.org/")
+high_park = Activity.create(name: "Highbridge Park", category: "park", setting: "outdoor", neighborhood_id: 3, url_link: "https://www.nycgovparks.org/parks/highbridge-park")
+tussauds = Activity.create(name: "Madame Tussauds", category: "museum", setting: "indoor", neighborhood_id: 4, url_link: "https://www.madametussauds.com/new-york/en/")
 
 #reviews
 Review.create(description: "It's good, Its like a five guys, but more like a neighborhood jawn", rating: 4, user_id: 2, activity_id: 2)
@@ -75,6 +77,9 @@ Review.create(description: "so cool to see all the buildings around including th
 Review.create(description: "i like jazz", rating: 5, user_id: 1, activity_id: 19)
 Review.create(description: "best irish coffee or french fries in the city. one of the best bars in the world", rating: 4, user_id: 4, activity_id: 20)
 Review.create(description: "its a pier that is also a park so yeah", rating: 2, user_id: 3, activity_id: 21)
+palace1 = Review.create(description: "Beautiful interior, art deco I think…", rating: 5, user_id: 2, activity_id: palace.id)
+high_park1 = Review.create(description: "Closed too early, and a lot of trash. Otherwise, cool, and very green", rating: 2, user_id: 4, activity_id: high_park.id)
+tussauds1 = Review.create(description: "Eerie how good the wax is! I’ll bring my grandchildren next time!", rating: 4, user_id: 1, activity_id: tussauds.id)
 
 
 #time of day
@@ -99,7 +104,9 @@ TimeOfDay.create(activity_id: 18, morning: true, afternoon: true, evening: true,
 TimeOfDay.create(activity_id: 19, morning: false, afternoon: false, evening: true, late_night: true)
 TimeOfDay.create(activity_id: 20, morning: false, afternoon: true, evening: true, late_night: true)
 TimeOfDay.create(activity_id: 21, morning: true, afternoon: true, evening: true, late_night: false)
-
+TimeOfDay.create(activity_id: palace.id, morning: false, afternoon: true, evening: true, late_night: true)
+TimeOfDay.create(activity_id: high_park.id, morning: true, afternoon: true, evening: false, late_night: false)
+TimeOfDay.create(activity_id: tussauds.id, morning: true, afternoon: true, evening: false, late_night: false)
 
 #pictures
 Picture.create(img_url: "https://pmcwwd.files.wordpress.com/2017/10/the-loyal-restaurant-03.jpg", caption: "A table", review_id: 5)
@@ -129,6 +136,9 @@ Picture.create(img_url: "http://i.imgur.com/wduALI8.jpg", caption: "the evolutio
 Picture.create(img_url: "http://jazzclubjury.com/wp-content/uploads/2012/03/Village_Vanguard-exterior.jpg", caption: "history is made everyday", review_id: 25)
 Picture.create(img_url: "https://www.irishnews.com/picturesarchive/irishnews/irishnews/2018/07/01/215210645-4eb341f0-2a00-4b95-aa1b-48bb4228c37c.jpg", caption: "no french fries today", review_id: 26)
 Picture.create(img_url: "http://thebabybumpdiaries.com/wp-content/uploads/2014/08/pier25tribeca3.jpg", caption: "first day of spring", review_id: 27)
+Picture.create(img_url: "https://imgs.6sqft.com/wp-content/uploads/2018/04/27165037/United-Palace-Theatre-31.jpg", caption: "Picture from the stage, super lucky!", review_id: palace1.id)
+Picture.create(img_url: "https://www.nycgovparks.org/photo_gallery/full_size/23019.jpg", caption: "Fall view of the bridge", review_id: high_park1.id)
+Picture.create(img_url: "https://www.madametussauds.com/media/2192868/500-x-333.jpg", caption: "So close to royalty laugh out loud", review_id: tussauds1.id)
 
 #friendships
 Friendship.create(user_id: 3, followee_id: 4)
