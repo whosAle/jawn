@@ -1,3 +1,20 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.background-log-in {
+  background-image: url("/assets/log-in-pic.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-log-in {
+  background-color: rgba(0, 0, 0, 0.45);
+}
