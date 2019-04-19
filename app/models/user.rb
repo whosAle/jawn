@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :name, uniqueness: true
 
-
+ 
 
   def num_of_reviews
     self.reviews.length

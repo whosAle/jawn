@@ -17,16 +17,16 @@
 
 .neighborhood-body-container {
 
-  justify-content: space-around;
+  justify-content: space-evenly;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
-  .card {
-    width: calc(33% - 50px);
-    margin-right: 25px;
-    margin-left: 25px;
-  }
+  // .card {
+  //   width: calc(33% - 50px);
+  //   margin-right: 25px;
+  //   margin-left: 25px;
+  // }
 }
 
 .card {

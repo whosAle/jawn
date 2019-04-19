@@ -7,7 +7,7 @@
   <div class="neighborhood-body-container">
     <% @neighborhoods.each do |neighborhood| %>
 
-    <div class="card">
+    <div class="card" style="width: 26rem;">
       <img class="card-img-top" src="<%= neighborhood.hood_pic %>" alt="<%=neighborhood.name%>">
       <div class="hood-index">
         <div class="card-text"><h3><%= link_to neighborhood.name, neighborhood_path(neighborhood) %></h3></div>
