@@ -20,9 +20,11 @@
   <% @activities.each do |activity| %>
   <div class="card act-each">
   <div class="card-body">
+    <% if activity.reviews && activity.reviews.first != nil %>
     <h5 class="card-title">
       <%= link_to image_tag(activity.reviews.first.picture.img_url), activity_path(activity) %>
     </h5>
+    <% end %>
     <p class="card-text hood-act-pic" >
       <%= link_to activity.name, activity_path(activity) %><br>
       <%= activity.reviews.length %> <%= "Review".pluralize(activity.reviews.length) %><br>
