@@ -34,7 +34,9 @@
   <div class="card act-revs">
     <div class="act-info">
       <div class="card-title review-pic">
+        <% if !review.picture.img_url.empty? %>
         <img src= <%= review.picture.img_url %>>
+        <% end %>
       </div>
       <div class="info-container">
         <p class="card-text act-text">
@@ -46,8 +48,8 @@
           <%= button_to "Delete Review", review_path, {method: :delete, params: {review_id: review.id}} if current_user == review.user %>
         </p>
         <small class="">
-          <% if review.picture %>
-          Caption: 
+          <% if !review.picture.img_url.empty? %>
+          Caption:
           <%= review.picture.caption %><br>
           <% end %>
         </small>
