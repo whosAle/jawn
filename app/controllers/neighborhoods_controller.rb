@@ -5,6 +5,7 @@ class NeighborhoodsController < ApplicationController
   end
 
   def show
+    session[:neighborhood_id] = nil
     @neighborhood = Neighborhood.find(params[:id])
 
     @CATEGORY = ["restaurant", "retail", "monument", "museum", "park", "nightclub", "bar"]

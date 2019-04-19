@@ -10,6 +10,7 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    
     session[:neighborhood_id] ||= params[:format]
     @activity = Activity.new
     @neighborhood = Neighborhood.find(session[:neighborhood_id].to_i)
