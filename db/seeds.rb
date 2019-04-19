@@ -37,7 +37,15 @@ Activity.create(name: "The Comedy Cellar", category: "nightclub", setting: "indo
 Activity.create(name: "Charging Bull", category: "monument", setting: "outdoor", neighborhood_id: 6, url_link: "https://en.wikipedia.org/wiki/Charging_Bull")
 Activity.create(name: "National Museum of the American Indian", category: "monument", setting: "indoor", neighborhood_id: 6, url_link: "https://americanindian.si.edu/")
 Activity.create(name: "Hook and Ladder 8", category: "monument", setting: "outdoor", neighborhood_id: 7, url_link: "https://en.wikipedia.org/wiki/Firehouse,_Hook_%26_Ladder_Company_8")
-Activity.create(name: "The Odeon", category: "restuarant", setting: "indoor", neighborhood_id: 7, url_link: "https://www.theodeonrestaurant.com/")
+Activity.create(name: "The Odeon", category: "restaurant", setting: "indoor", neighborhood_id: 7, url_link: "https://www.theodeonrestaurant.com/")
+Activity.create(name: "Stewart/Stand Design Store", category: "retail", setting: "indoor", neighborhood_id: 1, url_link: "https://www.stewartstand.com/pages/shop-d-u-m-b-o")
+Activity.create(name: "Pegu Club", category: "bar", setting: "indoor", neighborhood_id: 2, url_link: "http://www.peguclub.com/flash/")
+Activity.create(name: "Fort Tryon", category: "park", setting: "outdoor", neighborhood_id: 3, url_link: "https://www.forttryonparktrust.org/")
+Activity.create(name: "One Times Square", category: "monument", setting: "outdoor", neighborhood_id: 4, url_link: "")
+Activity.create(name: "Village Vanguard", category: "monument", setting: "indoor", neighborhood_id: 5, url_link: "https://villagevanguard.com/")
+Activity.create(name: "Dead Rabbit", category: "bar", setting: "indoor", neighborhood_id: 6, url_link: "https://www.deadrabbitnyc.com/")
+Activity.create(name: "Pier 25", category: "park", setting: "outdoor", neighborhood_id: 7, url_link: "https://hudsonriverpark.org/explore-the-park/locations/pier-25")
+
 
 #reviews
 Review.create(description: "It's good, Its like a five guys, but more like a neighborhood jawn", rating: 4, user_id: 2, activity_id: 2)
@@ -60,6 +68,13 @@ Review.create(description: "the ice cream sundae is amazing!", rating: 4, user_i
 Review.create(description: "the lighthouse was so red!", rating: 5, user_id: 3, activity_id: 7)
 Review.create(description: "came at 5am to get in line and ended up first!", rating: 4, user_id: 2, activity_id: 8)
 Review.create(description: "I've seen funnier", rating: 2, user_id: 3, activity_id: 10)
+Review.create(description: "omg was this store so crazy. all my friends have continued to tell me to check to check out this store. i had hever been so i got up one morning bright and early. I started with breakfast at my favorite diner before doing some shopping before i headed over to check this place it. i got there before noon and was shocked at what i saw. it was a retail store like all other retail stores. my friend's were right....i cant buy things here. It was an out of ", rating: 4, user_id: 4, activity_id: 15)
+Review.create(description: "best place to bring a date or have a cocktail, or beer, or glass or galss of wine or a little food because they only serve a little food or look out of a second story window and meet someone new or meet up wtih a friend or have a drink alone or look at houston. so great", rating: 5, user_id: 1, activity_id: 16)
+Review.create(description: "i have never been but i heard from the internet it is pretty cool", rating: 4, user_id: 2, activity_id: 17)
+Review.create(description: "so cool to see all the buildings around including this iconic building", rating: 4, user_id: 4, activity_id: 18)
+Review.create(description: "i like jazz", rating: 5, user_id: 1, activity_id: 19)
+Review.create(description: "best irish coffee or french fries in the city. one of the best bars in the world", rating: 4, user_id: 4, activity_id: 20)
+Review.create(description: "its a pier that is also a park so yeah", rating: 2, user_id: 3, activity_id: 21)
 
 
 #time of day
@@ -77,6 +92,13 @@ TimeOfDay.create(activity_id: 13, morning: false, afternoon: true, evening: true
 TimeOfDay.create(activity_id: 11, morning: true, afternoon: true, evening: true, late_night: false)
 TimeOfDay.create(activity_id: 9, morning: true, afternoon: true, evening: true, late_night: false)
 TimeOfDay.create(activity_id: 7, morning: true, afternoon: true, evening: true, late_night: false)
+TimeOfDay.create(activity_id: 15, morning: true, afternoon: true, evening: true, late_night: false)
+TimeOfDay.create(activity_id: 16, morning: false, afternoon: false, evening: true, late_night: true)
+TimeOfDay.create(activity_id: 17, morning: true, afternoon: true, evening: true, late_night: false)
+TimeOfDay.create(activity_id: 18, morning: true, afternoon: true, evening: true, late_night: false)
+TimeOfDay.create(activity_id: 19, morning: false, afternoon: false, evening: true, late_night: true)
+TimeOfDay.create(activity_id: 20, morning: false, afternoon: true, evening: true, late_night: true)
+TimeOfDay.create(activity_id: 21, morning: true, afternoon: true, evening: true, late_night: false)
 
 
 #pictures
@@ -86,7 +108,7 @@ Picture.create(img_url: "https://digitalmarketing.blob.core.windows.net/11400/im
 Picture.create(img_url: "http://cdn.brownstoner.com/wp-content/uploads/2016/02/manhattan-bridge-02.jpg", caption: "I think this is the right bridge", review_id: 3)
 Picture.create(img_url: "https://s3-media2.fl.yelpcdn.com/bphoto/p4hdeQnj6UaXzIXENIa5aw/348s.jpg", caption: "wall o bags", review_id: 4)
 Picture.create(img_url: "https://bryantpark-prod.imgix.net/images/bryantpark_uploads/images/2017-09-25-ColinMiller-Bryant-0002-6927.jpg", caption: "not whole foods", review_id: 6)
-Picture.create(img_url: "https://pmcwwd.files.wordpress.com/2017/10/the-loyal-restaurant-03.jpg", caption: "A table", review_id: 5)
+Picture.create(img_url: "https://infatuation.imgix.net/media/images/reviews/the-loyal/TeddyWolff.TheLoyal.Social.12.jpg", caption: "mhm", review_id: 17)
 Picture.create(img_url: "https://www.nypl.org/sites/default/files/images/locations/394/research_interior_2014_09_18_sasb_reading_room%20%282%29.jpg", caption: "The Rose Main Reading Room", review_id: 8)
 Picture.create(img_url: "https://forgotten-ny.com/wp-content/uploads/2011/10/dumbobrklynbridge.jpg", caption: "the brooklyn bridge from dumbo", review_id: 12)
 Picture.create(img_url: "https://media.timeout.com/images/103141307/630/472/image.jpg", caption: "the entrance", review_id: 11)
@@ -97,12 +119,17 @@ Picture.create(img_url: "https://thumbs-prod.si-cdn.com/fw7qdQGx1CbgU3eeWAh9w7Wg
 Picture.create(img_url: "https://d37219swed47g7.cloudfront.net/media/CACHE/images/reviews/the-odeon/banners/The-Odeon_2/716e8077f754f8199231a9fd78bf4e08.jpg", caption: "The Odeon at night", review_id: 7)
 Picture.create(img_url: "https://cdn1.gbot.me/photos/cL/be/1408412795/-Postcard_of_The_Odeon-20000000008285648-375x500.jpg", caption: "the dessert", review_id: 14)
 Picture.create(img_url: "https://media2.trover.com/T/526ca54a26c48d1c6a000a89/fixedw_large_4x.jpg", caption: "Get the ghost", review_id: 15)
-Picture.create(img_url: "https://cdn.theculturetrip.com/wp-content/uploads/2017/10/sundae-set_dillon-burke-3-1024x683.jpg", caption: "the ice cream sundae", review_id: 17)
-Picture.create(img_url: "https://fastly.4sqi.net/img/general/200x200/583546_4ABR8oKR4tL8iNDlgj-3E4wiscXq6mXMbzkbe5-NnXo.jpg", caption: "the outside", review_id: 7)
 Picture.create(img_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/GWB_and_Little_Red_Lighthouse_Xmas110013.jpg/375px-GWB_and_Little_Red_Lighthouse_Xmas110013.jpg", caption: "how wonderful", review_id: 18)
 Picture.create(img_url: "https://www.nycgo.com/images/460x285/SupremeV1_460x285.jpg", caption: "dope shot at night", review_id: 19)
 Picture.create(img_url: "https://loving-newyork.com/wp-content/uploads/2018/09/Things-to-do-in-greenwich-village-171208101859004-1600x960.jpg", caption: "the entrance", review_id: 20)
-
+Picture.create(img_url: "http://goindieretail.com/wp-content/uploads/2013/11/slideshow_2-700x500.jpg", caption: "the inside", review_id: 21)
+Picture.create(img_url: "https://www.worldsbestbars.com/wp-content/uploads/2018/04/bar_640_480_1peguclub08_5656e6cde3452.jpg", caption: "the bar before anyone else got there", review_id: 22)
+Picture.create(img_url: "https://i.imgur.com/dFF9yrp.jpg", caption: "great shot with my drone", review_id: 23)
+Picture.create(img_url: "http://i.imgur.com/wduALI8.jpg", caption: "the evolution of the most expensive real estate in the world", review_id: 24)
+Picture.create(img_url: "http://jazzclubjury.com/wp-content/uploads/2012/03/Village_Vanguard-exterior.jpg", caption: "history is made everyday", review_id: 25)
+Picture.create(img_url: "https://www.irishnews.com/picturesarchive/irishnews/irishnews/2018/07/01/215210645-4eb341f0-2a00-4b95-aa1b-48bb4228c37c.jpg", caption: "no french fries today", review_id: 26)
+Picture.create(img_url: "http://thebabybumpdiaries.com/wp-content/uploads/2014/08/pier25tribeca3.jpg", caption: "first day of spring", review_id: 27)
 
 #friendships
 Friendship.create(user_id: 3, followee_id: 4)
+Friendship.create(user_id: 4, followee_id: 3)
