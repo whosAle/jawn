@@ -1,24 +1,3 @@
-# README
+# Hood - A Neighborhood Activity Social Media App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Hood allows users to create, find, and rate neighborhood activities. Users can friend other users and see their activities, and the ratings they gave to activities in specific neighborhoods. Users just designate what neighborhood they are in, and are presented with all of the activities that were submitted by other users that are in the selected neighborhood. Then, a user can view the activity's page, displaying an aggregate of review ratings, pictures, hours of operation, and pictures.
