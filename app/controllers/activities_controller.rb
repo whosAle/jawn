@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
   end
 
   def new
-    
+
     session[:neighborhood_id] ||= params[:format]
     @activity = Activity.new
     @neighborhood = Neighborhood.find(session[:neighborhood_id].to_i)
@@ -42,7 +42,7 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    byebug
+    # byebug
     @activity.update(activity_params)
     if @activity.valid?
       redirect_to @activity
