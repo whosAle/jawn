@@ -4,4 +4,6 @@ Hood allows users to create, find, and rate neighborhood activities. Users can f
 
 ## [Video Demo](https://www.youtube.com/watch?v=oQsFAc5HXkY)
 
+![Hood-Application](/public/hood-demo.gif)
+
 Run `bundle` and then `rails s` to start the server. In your browser go to `localhost:3000`.
